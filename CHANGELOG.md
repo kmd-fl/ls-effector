@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.4](https://github.com/kmd-fl/ls-effector/compare/effector-v0.1.3...effector-v0.1.4) (2024-03-18)
+
+
+### Bug Fixes
+
+* release flow ([a979ab9](https://github.com/kmd-fl/ls-effector/commit/a979ab91abc22df18a91addf0ace60ec7bb2be02))
+* release flow ([a979ab9](https://github.com/kmd-fl/ls-effector/commit/a979ab91abc22df18a91addf0ace60ec7bb2be02))
+
 ## [0.1.3](https://github.com/kmd-fl/ls-effector/compare/effector-v0.1.2...effector-v0.1.3) (2024-03-18)
 
 
