@@ -1,4 +1,4 @@
-# Fluence Effector Templat
+# Fluence Effector Template
 
 This repository provides an example of a basic effector project and serves as a template for easy effector development.
 
