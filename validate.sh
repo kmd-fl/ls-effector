@@ -5,17 +5,21 @@ set -o errexit -o nounset -o pipefail
 cd "$(dirname "$0")"
 
 
+echo "Building the project"
 # Build the project
 # This script builds all subprojects and puts all created Wasm modules in one dir
 fluence module build ./effector --no-input
 
+echo "Generating CID"
 mkdir -p cid/artifacts
 ipfs add --offline -Q --only-hash --cid-version 1 --hash sha2-256 --chunker=size-262144 target/wasm32-wasi/release/ls_effector.wasm > cid/artifacts/cidv1
 
+echo "Building the cid crate"
 cd cid
 cargo build --release
 cd ..
 
+echo "Packaging the effector"
 # Pack the module
 fluence module pack ./effector/ --binding-crate=./imports/ --no-input -d .
 
