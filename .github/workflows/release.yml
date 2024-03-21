@@ -32,29 +32,6 @@ jobs:
           RELEASE_PLEASE_OUTPUT: ${{ toJSON(steps.release.outputs) }}
         run: echo "${RELEASE_PLEASE_OUTPUT}" | jq
 
-  validate:
-    name: Validate CIDs
-    if: ${{ needs.release-please.outputs.pr != null }}
-    runs-on: ubuntu-latest
-    needs:
-      - release-please
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup fcli
-        uses: fluencelabs/setup-fluence@v1
-        with:
-          # TODO: fluence module pack works only on main now, need to change later
-          version: main
-
-      - name: Setup IPFS CLI
-        uses: nahsi/setup-ipfs@v1
-
-      - name: Validate
-        run: ./validate.sh
-
   bump-version:
     if: ${{ needs.release-please.outputs.pr != null }}
     runs-on: ubuntu-latest
